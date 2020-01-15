@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  connection: localhost
+  become: "yes"
+  roles:
+    - role: crivetimihai.workstation.baseline
+    - role: crivetimihai.workstation.pip
+    - role: crivetimihai.workstation.packages
+    - role: crivetimihai.workstation.secure
+    - role: crivetimihai.server.xrdp
+    - role: leesoh.metasploit
+  tasks:
+    - git:
+        repo: https://github.com/offensive-security/exploitdb.git
+        dest: /opt/exploitdb
+    - git:
+        repo: https://github.com/offensive-security/exploitdb-papers.git
+        dest: /opt/exploitdb-papers
+    - git:
+        repo: https://gitlab.com/kalilinux/packages/webshells
+        dest: /opt/kali/webshells

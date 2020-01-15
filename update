@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ansible-galaxy collection install -p roles -r roles/requirements.yml
+ansible-galaxy role install -p roles -r roles/requirements.yml

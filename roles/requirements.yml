@@ -1,0 +1,8 @@
+---
+# do ansible-galaxy install -p roles -r requirements.yml
+collections:
+ - crivetimihai.workstation
+ - crivetimihai.server
+roles:
+ - leesoh.metasploit
+ - leesoh.nmap
