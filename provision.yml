@@ -5,11 +5,16 @@
   roles:
     - role: leesoh.metasploit
   tasks:
-    - crivetimihai.workstation.baseline:
-    - crivetimihai.workstation.pip:
-    - crivetimihai.workstation.packages:
-    - crivetimihai.workstation.secure:
-    - crivetimihai.server.xrdp:
+    - import_role:
+        name: crivetimihai.workstation.baseline
+    - import_role:
+        name: crivetimihai.workstation.pip
+    - import_role:
+        name: crivetimihai.workstation.packages
+    - import_role:
+        name: crivetimihai.workstation.secure
+    - import_role:
+        name: crivetimihai.server.xrdp
     - git:
         repo: https://github.com/offensive-security/exploitdb.git
         dest: /opt/exploitdb
