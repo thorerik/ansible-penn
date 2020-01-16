@@ -3,13 +3,13 @@
   connection: localhost
   become: "yes"
   roles:
-    - role: crivetimihai.workstation.baseline
-    - role: crivetimihai.workstation.pip
-    - role: crivetimihai.workstation.packages
-    - role: crivetimihai.workstation.secure
-    - role: crivetimihai.server.xrdp
     - role: leesoh.metasploit
   tasks:
+    - crivetimihai.workstation.baseline
+    - crivetimihai.workstation.pip
+    - crivetimihai.workstation.packages
+    - crivetimihai.workstation.secure
+    - crivetimihai.server.xrdp
     - git:
         repo: https://github.com/offensive-security/exploitdb.git
         dest: /opt/exploitdb
